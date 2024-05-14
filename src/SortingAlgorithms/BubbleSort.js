@@ -15,10 +15,10 @@ export async function BubbleSort(ele) {
                 await waitforme(delay);
                 swap(ele[j],ele[j+1]);
             }
-            ele[j].style.background = 'cyan';
-            ele[j+1].style.background = 'cyan';
+            ele[j].style.background = 'yellow';
+            ele[j+1].style.background = 'yellow';
         }
-        ele[ele.length-1-i].style.background = 'green';
+        ele[ele.length-1-i].style.background = 'skyblue';
     }
-    ele[0].style.background = 'green';
+    ele[0].style.background = 'skyblue';
 }

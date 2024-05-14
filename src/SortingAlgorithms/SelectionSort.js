@@ -27,6 +27,6 @@ export async function SelectionSort(ele) {
         await waitforme(delay);
         swap(ele[min_index],ele[i]);
         ele[min_index].style.background = 'cyan';
-        ele[i].style.background = 'green';
+        ele[i].style.background = 'skyblue';
     }
 }

@@ -8,7 +8,7 @@ function swap(el1, el2) {
 }
 
 export async function InsertionSort(ele) {
-    ele[0].style.background = 'green';
+    ele[0].style.background = 'skyblue';
     for(let i=1;i<ele.length;i++){
         let j = i-1;
         let key = ele[i].style.height;
@@ -23,11 +23,11 @@ export async function InsertionSort(ele) {
             await waitforme(delay);
 
             for(let k = i;k>=0;k--){
-                ele[k].style.background = 'green';
+                ele[k].style.background = 'skyblue';
             }
         }
 
         ele[j+1].style.height = key;
-        ele[i].style.background = 'green';
+        ele[i].style.background = 'skyblue';
     }
 }
