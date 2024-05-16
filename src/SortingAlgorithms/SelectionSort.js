@@ -16,17 +16,17 @@ export async function SelectionSort(ele) {
             await waitforme(delay);
             if(parseInt(ele[j].style.height) < parseInt(ele[min_index].style.height)){
                 if(min_index !== i){
-                    ele[min_index].style.background = 'cyan';
+                    ele[min_index].style.background = 'pink';
                 }
                 min_index = j;
             }
             else {
-                ele[j].style.background = 'cyan';
+                ele[j].style.background = 'pink';
             }
         }
         await waitforme(delay);
         swap(ele[min_index],ele[i]);
-        ele[min_index].style.background = 'cyan';
+        ele[min_index].style.background = 'pink';
         ele[i].style.background = 'skyblue';
     }
 }

@@ -1,10 +1,9 @@
 import { waitforme } from "../components/waitForMe";
-let delay = 30;
+let delay = 50;
 function swap(el1, el2) {
     let temp = el1.style.height;
     el1.style.height = el2.style.height;
     el2.style.height = temp;
-    
 }
 
 export async function InsertionSort(ele) {
