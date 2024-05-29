@@ -1,21 +1,21 @@
 import { waitforme } from "../components/waitForMe";
-let delay = 30;
+let delay = 50;
 function swap(el1, el2) {
     let temp = el1.style.height;
     el1.style.height = el2.style.height;
     el2.style.height = temp;
     
 }
-export async function QuickSort(ele,l,r){
-    if(l<r) {
-        let pivot_index = await partition(ele,l,r);
-        await QuickSort(ele,l,pivot_index-1);
-        await QuickSort(ele,pivot_index+1,r);
+export async function QuickSort(ele,start,end){
+    if(start<end) {
+        let pivot_index = await partition(ele,start,end);
+        await QuickSort(ele,start,pivot_index-1);
+        await QuickSort(ele,pivot_index+1,end);
     }
     else {
-        if(l>=0 && r >= 0 && l < ele.length && r < ele.length){
-            ele[r].style.background = 'skyblue';
-            ele[l].style.background = 'skyblue';
+        if(start>=0 && end >= 0 && start < ele.length && end < ele.length){
+            ele[end].style.background = 'skyblue';
+            ele[start].style.background = 'skyblue';    
         }
     }
 }
@@ -31,7 +31,7 @@ async function partition(ele,l,r){
             i++;
             swap(ele[i],ele[j]);
             ele[i].style.background = 'orange';
-            if( i != j) ele[j].style.background = 'orange';
+            if( i != j) ele[j].style.background = 'pink';
             await waitforme(delay);
         }
         else {
