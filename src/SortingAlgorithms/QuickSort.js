@@ -51,6 +51,5 @@ async function partition(ele,l,r){
             ele[k].style.background = 'pink';
         }
     }
-
     return i;
 }
