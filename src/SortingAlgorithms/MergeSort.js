@@ -1,20 +1,20 @@
 import { waitforme } from "../components/waitForMe";
-export async function getMergeSortAnimations (ele , l ,r) {
+export async function getMergeSortAnimations (ele , start ,end) {
 
-    if(l >= r){
+    if(start >= end){
         return;
     }
 
-    const m = l + Math.floor((r-l) / 2);
-    await getMergeSortAnimations(ele, l ,m);
-    await getMergeSortAnimations(ele,m+1,r);
-    await merge(ele,l,m,r);
+    const mid = start + Math.floor((end-start) / 2);
+    await getMergeSortAnimations(ele, start ,mid);
+    await getMergeSortAnimations(ele,mid+1,end);
+    await merge(ele,start,mid,end);
 }
 
 let delay = 30;
-async function merge(ele,low,mid,high){
-    const n1 = mid-low+1;
-    const n2 = high - mid;
+async function merge(ele,start,mid,end){
+    const n1 = mid-start+1;
+    const n2 = end - mid;
 
     let left = new Array(n1);
     let right = new Array(n2);
@@ -22,8 +22,8 @@ async function merge(ele,low,mid,high){
     for(let i = 0;i<n1 ; i++){
         await waitforme(delay);
 
-        ele[low+i].style.background = 'orange';
-        left[i] = ele[low+i].style.height; 
+        ele[start+i].style.background = 'orange';
+        left[i] = ele[start+i].style.height; 
     }
 
     for(let i=0;i<n2;i++){
@@ -32,7 +32,7 @@ async function merge(ele,low,mid,high){
         right[i] = ele[mid+1+i].style.height;
     }
     await waitforme(delay);
-    let i=0, j=0, k = low;
+    let i=0, j=0, k = start;
     while(i<n1 && j < n2){
         await waitforme(delay);
 
